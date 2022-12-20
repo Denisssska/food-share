@@ -1,15 +1,12 @@
-import React from "react";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Avatar from "@mui/material/Avatar";
 import {useForm} from "react-hook-form";
 import styles from "../login/Login.module.scss";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../hook/hooks";
 
-import {CssTextField} from "../../components/textFieldStyle/textFieldStyle";
+
 import {AuthPayload} from "../../api/profileAPI";
 import {registerTC} from "../../store/slices/userReducer";
+import {Avatar, Box, Button, FormControl, FormErrorMessage, FormLabel, Input} from "@chakra-ui/react";
 
 
 export const Registration = () => {
@@ -21,8 +18,7 @@ export const Registration = () => {
     const {
         register,
         handleSubmit,
-        setError,
-        formState: {errors, isValid}
+        formState: {errors, isSubmitting}
     } = useForm({
         defaultValues: {
             email: "",
@@ -32,7 +28,8 @@ export const Registration = () => {
         mode: "onChange"
     });
     const onSubmit = async (value: AuthPayload) => {
-        const data = await dispatch(registerTC(value));
+        console.log(value)
+        // const data = await dispatch(registerTC(value));
         // console.log(data)
         // if (!data.payload) {
         //     alert("Не удалось зарегистрироваться...");
@@ -47,52 +44,54 @@ export const Registration = () => {
         navigate("/");
     }
     return (
-        <Paper classes={{root: styles.root}}>
-            <Typography classes={{root: styles.title}} variant="h5">
+        <Box>
+            <div>
                 Registration
-            </Typography>
+            </div>
             <div className={styles.avatar}>
                 <Avatar sx={{width: 100, height: 100}}/>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <CssTextField
-                    variant="filled"
-                    error={Boolean(errors.fullName?.message)}
-                    helperText={errors.fullName?.message}
-                    {...register("fullName", {required: "Enter name"})}
-                    //className={styles.field}
-                    label="Full name"
-                    fullWidth
-                />
-                <CssTextField
-                    variant="filled"
-                    error={Boolean(errors.email?.message)}
-                    helperText={errors.email?.message}
-                    {...register("email", {required: "Enter email"})}
-                    //className={styles.field}
-                    label="E-Mail"
-                    fullWidth
-                />
-                <CssTextField
-                    variant="filled"
-                    error={Boolean(errors.password?.message)}
-                    helperText={errors.password?.message}
-                    {...register("password", {required: "Enter password"})}
-                    //className={styles.field}
-                    label="Password"
-                    fullWidth
-                />
-                <button type="submit" disabled={!isValid} className={!isValid ? styles.disable : styles.enable}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Register
-                </button>
+                <FormControl isInvalid={!!errors.fullName}>
+                    <FormLabel htmlFor='fullName'>First name</FormLabel>
+                    <Input
+                        id={"fullName"}
+                        variant="filled"
+                        {...register("fullName", {
+                            required: "Enter name please",
+                            minLength: {value: 4, message: 'Minimum length should be 4'},
+                        })}
+                        placeholder="Full name"
+                    />
+                    <FormErrorMessage>
+                        {errors.fullName && errors.fullName.message}
+                    </FormErrorMessage>
+                    <Input
+                        variant="filled"
+                        {...register("email", {
+                            required: "Enter email",
 
+                        })}
+                        placeholder="E-Mail"
+                    />
+                    <FormErrorMessage>
+                        {errors.email && errors.email.message}
+                    </FormErrorMessage>
+                    <Input
+                        variant="filled"
+                        {...register("password", {required: "Enter password"})}
+                        placeholder="Password"
+                    />
+                    <FormErrorMessage>
+                        {errors.password && errors.password.message}
+                    </FormErrorMessage>
+                    <Button type="submit" disabled={isSubmitting}
+                            className={!isSubmitting ? styles.disable : styles.enable}>
+                        Register
+                    </Button>
+                </FormControl>
             </form>
-            {/*{status !== "registration" && status !== "registered" &&*/}
-            {/*  <Snackbar open anchorOrigin={{ vertical: "bottom", horizontal: "center" }} message={status} />}*/}
-        </Paper>
+
+        </Box>
     );
 };

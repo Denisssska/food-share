@@ -1,12 +1,9 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
+
 import styles from "./Login.module.scss";
 import {loginTC} from "../../store/slices/userReducer";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
-import {Snackbar} from "@mui/material";
-import {CssTextField} from "../../components/textFieldStyle/textFieldStyle";
 import {AuthPayload} from "../../api/profileAPI";
 import {useAppDispatch, useAppSelector} from "../../hook/hooks";
 
@@ -41,45 +38,40 @@ export const Login = () => {
 
     return (
         <>
-            {/*{!isAuth &&*/}
-            {/*    <Snackbar open anchorOrigin={{vertical: "bottom", horizontal: "center"}}*/}
-            {/*              // message={"some text"}*/}
-            {/*    />*/}
-            {/*}*/}
-            <Paper classes={{root: styles.root}}>
-                <Typography classes={{root: styles.title}} variant="h5">
-                    Log In
-                </Typography>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <CssTextField
-                        variant="filled"
-                        type="email" className={styles.field}
-                        label="E-Mail"
-                        error={Boolean(errors.email?.message)}
-                        helperText={errors.email?.message}
-                        {...register("email", {required: "Enter email"})}
-                        fullWidth
-                    />
-                    <CssTextField
-                        variant="filled"
-                        {...register("password", {required: "Enter password"})}
-                        error={Boolean(errors.password?.message)}
-                        helperText={errors.password?.message} className={styles.field}
-                        label="Password"
-                        fullWidth/>
+            {/*   <Paper classes={{root: styles.root}}>*/}
+            {/*    <Typography classes={{root: styles.title}} variant="h5">*/}
+            {/*        Log In*/}
+            {/*    </Typography>*/}
+            {/*    <form onSubmit={handleSubmit(onSubmit)}>*/}
+            {/*        <CssTextField*/}
+            {/*            variant="filled"*/}
+            {/*            type="email" className={styles.field}*/}
+            {/*            label="E-Mail"*/}
+            {/*            error={Boolean(errors.email?.message)}*/}
+            {/*            helperText={errors.email?.message}*/}
+            {/*            {...register("email", {required: "Enter email"})}*/}
+            {/*            fullWidth*/}
+            {/*        />*/}
+            {/*        <CssTextField*/}
+            {/*            variant="filled"*/}
+            {/*            {...register("password", {required: "Enter password"})}*/}
+            {/*            error={Boolean(errors.password?.message)}*/}
+            {/*            helperText={errors.password?.message} className={styles.field}*/}
+            {/*            label="Password"*/}
+            {/*            fullWidth/>*/}
 
-                    <button type="submit" disabled={!isValid} className={!isValid ? styles.disable : styles.enable}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Submit
-                    </button>
+            {/*        <button type="submit" disabled={!isValid} className={!isValid ? styles.disable : styles.enable}>*/}
+            {/*            <span></span>*/}
+            {/*            <span></span>*/}
+            {/*            <span></span>*/}
+            {/*            <span></span>*/}
+            {/*            Submit*/}
+            {/*        </button>*/}
 
-                    <NavLink className={styles.navLink} to="/forgot">Forgot password?</NavLink>
-                    <NavLink className={styles.navLink} to="/forgot">Forgot email?</NavLink>
-                </form>
-            </Paper>
+            {/*        <NavLink className={styles.navLink} to="/forgot">Forgot password?</NavLink>*/}
+            {/*        <NavLink className={styles.navLink} to="/forgot">Forgot email?</NavLink>*/}
+            {/*    </form>*/}
+            {/*</Paper>*/}
         </>
 
     );

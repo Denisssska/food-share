@@ -5,8 +5,9 @@ import burger from "../../assets/burgers.png";
 import pizza from "../../assets/pizza.png";
 import macaroon from "../../assets/macaroons.png";
 import likes from "../../assets/likes.svg";
-import {Button, Rating} from "@mui/material";
+
 import {useLocation} from "react-router-dom";
+import {Button} from "@chakra-ui/react";
 
 const ProductPage = () => {
     const {photo} = useLocation().state;
@@ -15,15 +16,14 @@ const ProductPage = () => {
         <div className={styles.root}>
             <div className={styles.block}>
                 <div className={styles.img}><img src={photo} alt="soup"/></div>
-                <div className={styles.aboutProd}>
-                    <div style={{fontWeight: "700", fontSize: "22px", lineHeight: "32px"}}>ProductsUserName</div>
+                <div className={styles.aboutProd}><div style={{fontWeight: "700", fontSize: "22px", lineHeight: "32px"}}>ProductsUserName</div>
                     <div><img src={likes} alt="likes"/> : 5likes</div>
                     <div
                         style={{display: "flex", justifyContent: "space-between", fontWeight: "700", fontSize: "16px"}}>
                         <div style={{alignSelf: "center"}}>Rating:</div>
-                        <Rating name="half-rating"
-                                defaultValue={2.5}
-                                precision={0.5}/>
+                        {/*<St name="half-rating"*/}
+                        {/*        defaultValue={2.5}*/}
+                        {/*        precision={0.5}/>*/}
                     </div>
                     <div>
                         <div style={{fontWeight: "700", fontSize: "16px"}}>About product:</div>
@@ -45,7 +45,7 @@ const ProductPage = () => {
                         <div style={{fontWeight: "700", fontSize: "16px"}}>Food type:</div>
                         <div>Canned food</div>
                     </div>
-                    <Button sx={{marginTop: "22%"}} variant="contained" fullWidth>Request Pick Up</Button>
+                    <Button sx={{marginTop: "22%"}} variant="contained" maxW={"960px"}>Request Pick Up</Button>
                 </div>
             </div>
             <div className={styles.block}>
