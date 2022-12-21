@@ -71,11 +71,9 @@ export default function NavComponent() {
                     <MenuButton cursor="pointer" _expanded={{ bg: 'blue.400' }} _hover={{bg: 'gray.400'}} variant="styled" boxSize='40px' as={Avatar}>
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>Download</MenuItem>
-                        <MenuItem>Create a Copy</MenuItem>
-                        <MenuItem>Mark as Draft</MenuItem>
-                        <MenuItem>Delete</MenuItem>
-                        <MenuItem>Attend a Workshop</MenuItem>
+                        <MenuItem>login</MenuItem>
+                        <MenuItem>Registration</MenuItem>
+                        <MenuItem>Add list</MenuItem>
                     </MenuList>
                 </Menu>
             </Box>

@@ -28,12 +28,7 @@ export default function Main() {
                                 >
                                     {item.distance}
                                 </Box>
-                                <Image
-                                    ml="2"
-                                    borderRadius='full'
-                                    boxSize='15px'
-                                    src={navIcon}
-                                    alt={navIcon}
+                                <Image ml="2" borderRadius='full' boxSize='15px' src={navIcon} alt={navIcon}
                                 />
                             </Box>
                             <Box display='flex' alignItems='baseline'>
