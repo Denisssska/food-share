@@ -1,11 +1,10 @@
 import React from "react";
-
-import styles from "./Login.module.scss";
 import {loginTC} from "../../store/slices/userReducer";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {AuthPayload} from "../../api/profileAPI";
 import {useAppDispatch, useAppSelector} from "../../hook/hooks";
+import {Avatar, Box, Button, FormControl, FormErrorMessage, Input} from "@chakra-ui/react";
 
 export const Login = () => {
 
@@ -13,11 +12,17 @@ export const Login = () => {
     const dispatch = useAppDispatch();
     const {isAuth} = useAppSelector(state => state.user);
 
-
-    const {register, handleSubmit, setError, formState: {errors, isValid}} = useForm({
+    const {
+        register,
+        handleSubmit,
+        formState: {errors, isSubmitting}
+    } = useForm({
         defaultValues: {
-            email: "", password: ""
-        }, mode: "onChange"
+            email: "",
+            password: "",
+            fullName: ""
+        },
+        mode: "onChange"
     });
 
     const onSubmit = async (values: AuthPayload) => {
@@ -37,42 +42,55 @@ export const Login = () => {
     }
 
     return (
-        <>
-            {/*   <Paper classes={{root: styles.root}}>*/}
-            {/*    <Typography classes={{root: styles.title}} variant="h5">*/}
-            {/*        Log In*/}
-            {/*    </Typography>*/}
-            {/*    <form onSubmit={handleSubmit(onSubmit)}>*/}
-            {/*        <CssTextField*/}
-            {/*            variant="filled"*/}
-            {/*            type="email" className={styles.field}*/}
-            {/*            label="E-Mail"*/}
-            {/*            error={Boolean(errors.email?.message)}*/}
-            {/*            helperText={errors.email?.message}*/}
-            {/*            {...register("email", {required: "Enter email"})}*/}
-            {/*            fullWidth*/}
-            {/*        />*/}
-            {/*        <CssTextField*/}
-            {/*            variant="filled"*/}
-            {/*            {...register("password", {required: "Enter password"})}*/}
-            {/*            error={Boolean(errors.password?.message)}*/}
-            {/*            helperText={errors.password?.message} className={styles.field}*/}
-            {/*            label="Password"*/}
-            {/*            fullWidth/>*/}
+        <Box w="50%" m="0 auto" textAlign="center" fontSize={25} fontWeight={600}>
+            <Box mb={5}>
+                Login
+            </Box>
+            <Avatar m={"2% 0 5% 0"} sx={{width: 100, height: 100}}/>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <FormControl isInvalid={!!errors.fullName}>
+                    <Input mb={3}
+                           id={"fullName"}
+                           variant="filled"
+                           {...register("fullName", {
+                               required: "Enter name please",
+                               minLength: {value: 4, message: 'Minimum length should be 4'},
+                           })}
+                           placeholder="Full name"
+                    />
+                    <FormErrorMessage>
+                        {errors.fullName && errors.fullName.message}
+                    </FormErrorMessage>
+                    <Input mb={3}
+                           variant="filled"
+                           {...register("email", {
+                               required: "Enter email",
 
-            {/*        <button type="submit" disabled={!isValid} className={!isValid ? styles.disable : styles.enable}>*/}
-            {/*            <span></span>*/}
-            {/*            <span></span>*/}
-            {/*            <span></span>*/}
-            {/*            <span></span>*/}
-            {/*            Submit*/}
-            {/*        </button>*/}
+                           })}
+                           placeholder="E-Mail"
+                    />
+                    <FormErrorMessage>
+                        {errors.email && errors.email.message}
+                    </FormErrorMessage>
+                    <Input mb={3}
+                           variant="filled"
+                           {...register("password", {required: "Enter password"})}
+                           placeholder="Password"
+                    />
+                    <FormErrorMessage>
+                        {errors.password && errors.password.message}
+                    </FormErrorMessage>
+                    <Button fontSize={25} variant="solid" m={"5% 0"} w="100%" alignSelf="center" type="submit"
+                            disabled={isSubmitting}>
+                        Login
+                    </Button>
+                </FormControl>
+                <Box fontSize={15}>
+                    <NavLink to={"#"}>forgot password?</NavLink>
+                    <NavLink to={"#"}>Forgot username?</NavLink>
+                </Box>
+            </form>
 
-            {/*        <NavLink className={styles.navLink} to="/forgot">Forgot password?</NavLink>*/}
-            {/*        <NavLink className={styles.navLink} to="/forgot">Forgot email?</NavLink>*/}
-            {/*    </form>*/}
-            {/*</Paper>*/}
-        </>
-
+        </Box>
     );
 };

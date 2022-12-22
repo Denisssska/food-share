@@ -1,11 +1,9 @@
 import {useForm} from "react-hook-form";
-import styles from "../login/Login.module.scss";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../hook/hooks";
 
 
 import {AuthPayload} from "../../api/profileAPI";
-import {registerTC} from "../../store/slices/userReducer";
 import {Avatar, Box, Button, FormControl, FormErrorMessage, FormLabel, Input} from "@chakra-ui/react";
 
 
@@ -44,17 +42,14 @@ export const Registration = () => {
         navigate("/");
     }
     return (
-        <Box>
-            <div>
+        <Box w="50%" m="0 auto" textAlign="center" fontSize={25} fontWeight={600}>
+            <Box mb={5}>
                 Registration
-            </div>
-            <div className={styles.avatar}>
-                <Avatar sx={{width: 100, height: 100}}/>
-            </div>
+            </Box>
+                <Avatar m={"2% 0 5% 0"} sx={{width: 100, height: 100}}/>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormControl isInvalid={!!errors.fullName}>
-                    <FormLabel htmlFor='fullName'>First name</FormLabel>
-                    <Input
+                    <Input mb={3}
                         id={"fullName"}
                         variant="filled"
                         {...register("fullName", {
@@ -66,7 +61,7 @@ export const Registration = () => {
                     <FormErrorMessage>
                         {errors.fullName && errors.fullName.message}
                     </FormErrorMessage>
-                    <Input
+                    <Input mb={3}
                         variant="filled"
                         {...register("email", {
                             required: "Enter email",
@@ -77,7 +72,7 @@ export const Registration = () => {
                     <FormErrorMessage>
                         {errors.email && errors.email.message}
                     </FormErrorMessage>
-                    <Input
+                    <Input mb={3}
                         variant="filled"
                         {...register("password", {required: "Enter password"})}
                         placeholder="Password"
@@ -85,8 +80,7 @@ export const Registration = () => {
                     <FormErrorMessage>
                         {errors.password && errors.password.message}
                     </FormErrorMessage>
-                    <Button type="submit" disabled={isSubmitting}
-                            className={!isSubmitting ? styles.disable : styles.enable}>
+                    <Button variant="ghost" m={"5% 0"} w="100%" alignSelf="center" type="submit" disabled={isSubmitting}>
                         Register
                     </Button>
                 </FormControl>
