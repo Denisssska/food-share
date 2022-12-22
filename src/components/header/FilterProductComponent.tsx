@@ -17,7 +17,7 @@ export default function SimpleBottomNavigation() {
                 </Box>
             })}
 
-            <MyLogo fill={"red"}/>
+            {/*<MyLogo fill={"red"}/>*/}
         </Box>
     );
 }

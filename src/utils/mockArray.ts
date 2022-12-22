@@ -2,6 +2,8 @@ import hello from '../assets/hello-i-m-nik-hehUfVxG8Xk-unsplash 1.png';
 import strawberry from '../assets/Rectangle 53.png';
 import pizza from '../assets/Rectangle 54.png';
 import sweets from '../assets/Rectangle 55.png';
+import tarlan from '../assets/Tarlan.png';
+import denis from '../assets/den.jpg';
 
 type MockElT = {
     img: string,
@@ -9,6 +11,12 @@ type MockElT = {
     description: string,
     available_time: string,
     distance: string
+}
+export type MockTeamArr = {
+    img: string
+    name: string
+    exp: string
+    about: string
 }
 
 export const mockArray: Array<MockElT> = [
@@ -67,5 +75,54 @@ export const mockArray: Array<MockElT> = [
         description: '20 assorted candy bars',
         available_time: '6 - 9pm',
         distance: '12mi'
+    },
+]
+export const teamMockArray: Array<MockTeamArr> = [
+    {
+        name: 'Tarlan',
+        img: tarlan,
+        exp: "Founder & CEO",
+        about: "Former founder of IT Computers, Dev Ops, webdev, mobile dev, 17+ years of experience in IT industry. BCS Auckland, New Zealand, BEc Rybinsk, Russia\n" +
+            "\n"
+    },
+    {
+        name: 'Denis',
+        img: denis,
+        exp: "Frontend Engineer",
+        about: "React frontend engineer. 1 year in development. Belarusian State Agrarian University"
+    },
+    {
+        name: 'Stanislav',
+        img: denis,
+        exp: "Frontend Engineer",
+        about: "React frontend engineer. 1 year in development. Belarusian State University of Physical culture and Sport in Minsk. "
+    },
+    {
+        name: 'Tarlan',
+        img: tarlan,
+        exp: "Founder & CEO",
+        about: "Former founder of IT Computers, Dev Ops, webdev, mobile dev, 17+ years of experience in IT industry. BCS Auckland, New Zealand, BEc Rybinsk, Russia\n" +
+            "\n"
+    },
+    {
+        name: 'Tarlan',
+        img: tarlan,
+        exp: "Founder & CEO",
+        about: "Former founder of IT Computers, Dev Ops, webdev, mobile dev, 17+ years of experience in IT industry. BCS Auckland, New Zealand, BEc Rybinsk, Russia\n" +
+            "\n"
+    },
+    {
+        name: 'Tarlan',
+        img: tarlan,
+        exp: "Founder & CEO",
+        about: "Former founder of IT Computers, Dev Ops, webdev, mobile dev, 17+ years of experience in IT industry. BCS Auckland, New Zealand, BEc Rybinsk, Russia\n" +
+            "\n"
+    },
+    {
+        name: 'Tarlan',
+        img: tarlan,
+        exp: "Founder & CEO",
+        about: "Former founder of IT Computers, Dev Ops, webdev, mobile dev, 17+ years of experience in IT industry. BCS Auckland, New Zealand, BEc Rybinsk, Russia\n" +
+            "\n"
     },
 ]

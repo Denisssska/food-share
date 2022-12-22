@@ -29,6 +29,12 @@ export default function NavComponent() {
     const navigateToMain = () => {
         navigate('/')
     }
+    const navigateToAboutUs = () => {
+        navigate('/aboutUs')
+    }
+    const navigateToAddList = () => {
+        navigate('/addList')
+    }
 
     return (
         <Box display='flex' alignItems='baseline'>
@@ -45,13 +51,15 @@ export default function NavComponent() {
                 />
                 <Input type='search' placeholder='What are we in search of today?'/>
             </InputGroup>
-            <Box  cursor="pointer" fontSize='22px' textAlign="center" fontWeight="400" alignSelf="center" w="40%"
+            <Box onClick={navigateToAboutUs} cursor="pointer" fontSize='22px' textAlign="center" fontWeight="400"
+                 alignSelf="center" w="40%"
                  color='#303030'>
                 About Us
             </Box>
             <Box alignSelf="center" p={0} color='#303030'>
                 <Menu>
-                    <MenuButton _expanded={{ bg: 'blue.400' }} _hover={{bg: 'gray.400'}} variant="styled" as={Button} rightIcon={<ChevronDownIcon/>}>
+                    <MenuButton _expanded={{bg: 'blue.400'}} _hover={{bg: 'gray.400'}} variant="styled" as={Button}
+                                rightIcon={<ChevronDownIcon/>}>
                     </MenuButton>
                     <MenuList>
                         <MenuItem>Download</MenuItem>
@@ -68,18 +76,19 @@ export default function NavComponent() {
             <Image mr="5%" alignSelf="center" src={map} alt={map}/>
             <Box alignSelf="center" p={0} color='#303030'>
                 <Menu>
-                    <MenuButton cursor="pointer" _expanded={{ bg: 'blue.400' }} _hover={{bg: 'gray.400'}} variant="styled" boxSize='40px' as={Avatar}>
+                    <MenuButton cursor="pointer" _expanded={{bg: 'blue.400'}} _hover={{bg: 'gray.400'}} variant="styled"
+                                boxSize='40px' as={Avatar}>
                     </MenuButton>
                     <MenuList>
-                        <MenuItem>login</MenuItem>
-                        <MenuItem>Registration</MenuItem>
-                        <MenuItem>Add list</MenuItem>
+                        <MenuItem onClick={() => navigateToLogin()}>login</MenuItem>
+                        <MenuItem onClick={() => navigateToRegistration()}>Registration</MenuItem>
+                        <MenuItem onClick={() => navigateToAddList()}>Add list</MenuItem>
                     </MenuList>
                 </Menu>
             </Box>
 
             {/*<Avatar alignSelf="center" boxSize='40px' ml="5%" src='https://bit.ly/broken-link'/>*/}
-            <Box w="20%" fontSize='22px' textAlign="center" fontWeight="400" alignSelf="center">name </Box>
+            <Box pl={5} fontSize='22px' textAlign="center" fontWeight="400" alignSelf="center">name</Box>
         </Box>
     );
 }
