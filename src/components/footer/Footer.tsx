@@ -6,6 +6,7 @@ import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
 import {NavLink} from "react-router-dom";
 import {CardFooter} from "@chakra-ui/react";
+
 const Footer = () => {
     return (
         <CardFooter className={styles.root} >

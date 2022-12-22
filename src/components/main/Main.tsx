@@ -19,7 +19,7 @@ export default function Main() {
                                alt="soup"/>
                         <div>
                             <Box display='flex' alignItems='baseline' fontSize={25}>
-                                <Box noOfLines={1} mt='2' style={{fontWeight: "700"}}>{item.name}</Box>
+                                <Box noOfLines={1} mt='2' fontWeight={700}>{item.name}</Box>
                                 <Image ml="2" borderRadius='full' boxSize='20px' src={soup} alt={soup}/>
                             </Box>
                             <Box display='flex' alignItems='baseline'>

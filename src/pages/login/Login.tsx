@@ -1,10 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import {loginTC} from "../../store/slices/userReducer";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {AuthPayload} from "../../api/profileAPI";
 import {useAppDispatch, useAppSelector} from "../../hook/hooks";
-import {Avatar, Box, Button, FormControl, FormErrorMessage, Input} from "@chakra-ui/react";
+import {
+    Avatar,
+    Box,
+    Button,
+    Flex,
+    FormControl,
+    FormErrorMessage,
+    FormLabel,
+    Input,
+    InputGroup, InputRightElement,
+    Text
+} from "@chakra-ui/react";
+import {ViewIcon, ViewOffIcon} from "@chakra-ui/icons";
 
 export const Login = () => {
 
@@ -24,6 +36,8 @@ export const Login = () => {
         },
         mode: "onChange"
     });
+    const [show, setShow] = useState(false)
+    const handleClick = () => setShow(!show)
 
     const onSubmit = async (values: AuthPayload) => {
         const data = await dispatch(loginTC(values));
@@ -42,25 +56,12 @@ export const Login = () => {
     }
 
     return (
-        <Box w="50%" m="0 auto" textAlign="center" fontSize={25} fontWeight={600}>
+        <Box w="50%" m="0 auto" textAlign="center" fontSize={40} fontWeight={600}>
             <Box mb={5}>
-                Login
+                Welcome to Foodshare
             </Box>
-            <Avatar m={"2% 0 5% 0"} sx={{width: 100, height: 100}}/>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <FormControl isInvalid={!!errors.fullName}>
-                    <Input mb={3}
-                           id={"fullName"}
-                           variant="filled"
-                           {...register("fullName", {
-                               required: "Enter name please",
-                               minLength: {value: 4, message: 'Minimum length should be 4'},
-                           })}
-                           placeholder="Full name"
-                    />
-                    <FormErrorMessage>
-                        {errors.fullName && errors.fullName.message}
-                    </FormErrorMessage>
+                <FormControl isInvalid={!!errors.email && !!errors.password}>
                     <Input mb={3}
                            variant="filled"
                            {...register("email", {
@@ -72,11 +73,21 @@ export const Login = () => {
                     <FormErrorMessage>
                         {errors.email && errors.email.message}
                     </FormErrorMessage>
-                    <Input mb={3}
-                           variant="filled"
-                           {...register("password", {required: "Enter password"})}
-                           placeholder="Password"
-                    />
+
+                    <InputGroup>
+                        <Input
+                            variant="filled"
+                            {...register("password", {required: "Enter password"})}
+                            placeholder="Password"
+                            type={show ? "text" : "password"}
+                        />
+                        <InputRightElement width='4.5rem'>
+                            <Button h='1.75rem' size='sm' onClick={handleClick}>
+                                {show ? <ViewOffIcon/> : <ViewIcon/>}
+                            </Button>
+                        </InputRightElement>
+                    </InputGroup>
+
                     <FormErrorMessage>
                         {errors.password && errors.password.message}
                     </FormErrorMessage>
@@ -85,12 +96,28 @@ export const Login = () => {
                         Login
                     </Button>
                 </FormControl>
-                <Box fontSize={15}>
-                    <NavLink to={"#"}>forgot password?</NavLink>
+                <Flex align="center" justify="space-around" color={"red.500"} fontSize={15}>
+                    <NavLink to={"#"}>Forgot password?</NavLink>
                     <NavLink to={"#"}>Forgot username?</NavLink>
-                </Box>
+                </Flex>
+                <Flex alignSelf={"center"} align="center" justify="center">
+                    <hr style={{width: "40%"}}/>
+                    <Text mx={3} fontSize={17}>or</Text>
+                    <hr style={{width: "40%"}}/>
+                </Flex>
+                <Button _hover={{bg: 'red.100'}} fontSize={20} variant="outline" mb={3} w="100%" alignSelf="center"
+                        disabled={isSubmitting}>
+                    Continue with Facebook
+                </Button>
+                <Button _hover={{bg: 'red.100'}} fontSize={20} variant="outline" mb={3} w="100%" alignSelf="center"
+                        disabled={isSubmitting}>
+                    Continue with Apple
+                </Button>
+                <Button _hover={{bg: 'red.100'}} fontSize={20} variant="outline" m={0} w="100%" alignSelf="center"
+                        disabled={isSubmitting}>
+                    Continue with Google
+                </Button>
             </form>
-
         </Box>
     );
 };
