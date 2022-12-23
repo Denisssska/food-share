@@ -18,6 +18,7 @@ function App() {
             <CardBody>
                 <Routes>
                     <Route path={"/"} element={<Main/>}/>
+                    <Route path={"/*"} element={<Main/>}/>
                     <Route path={"/login"} element={<Login/>}/>
                     <Route path={"/registration"} element={<Registration/>}/>
                     <Route path={"/oneProd"} element={<ProductPage/>}/>
