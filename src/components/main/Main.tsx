@@ -1,10 +1,10 @@
 import React from 'react';
 import {mockArray} from "../../utils/mockArray";
 import {useNavigate} from "react-router-dom";
-import {Box, GridItem, SimpleGrid, Image} from "@chakra-ui/react";
+import {Box, GridItem, Image, Link, SimpleGrid, useMediaQuery} from "@chakra-ui/react";
 import navIcon from '../../assets/map.svg';
 import soup from '../../assets/soup.svg';
-import {useMediaQuery} from '@chakra-ui/react';
+import {ArrowForwardIcon} from "@chakra-ui/icons";
 
 export default function Main() {
     const [isNoneMobileScreens] = useMediaQuery("(min-width:700px)")
@@ -50,6 +50,11 @@ export default function Main() {
                 ))}
 
             </SimpleGrid>
+            <Box _hover={{bg: 'red.100'}} fontSize={25} textAlign="center" mt={5}>
+                <Link href='#'>
+                    See more... <ArrowForwardIcon mx={2}/>
+                </Link>
+            </Box>
         </Box>
     );
 }

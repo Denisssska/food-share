@@ -5,15 +5,14 @@ import {useForm} from "react-hook-form";
 import {AuthPayload} from "../../api/profileAPI";
 import {useAppDispatch, useAppSelector} from "../../hook/hooks";
 import {
-    Avatar,
     Box,
     Button,
     Flex,
     FormControl,
     FormErrorMessage,
-    FormLabel,
     Input,
-    InputGroup, InputRightElement,
+    InputGroup,
+    InputRightElement,
     Text
 } from "@chakra-ui/react";
 import {ViewIcon, ViewOffIcon} from "@chakra-ui/icons";
@@ -27,7 +26,7 @@ export const Login = () => {
     const {
         register,
         handleSubmit,
-        formState: {errors, isSubmitting}
+        formState: {errors, isSubmitting, isValid}
     } = useForm({
         defaultValues: {
             email: "",
@@ -92,7 +91,7 @@ export const Login = () => {
                         {errors.password && errors.password.message}
                     </FormErrorMessage>
                     <Button fontSize={25} variant="solid" m={"5% 0"} w="100%" alignSelf="center" type="submit"
-                            disabled={isSubmitting}>
+                            disabled={isValid}>
                         Login
                     </Button>
                 </FormControl>

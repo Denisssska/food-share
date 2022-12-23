@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, GridItem, Image, SimpleGrid} from "@chakra-ui/react";
+import {Box, Grid, GridItem, Image, Link, SimpleGrid} from "@chakra-ui/react";
 import kitchen from "../../assets/Foodies Soup Kitchen.png";
 import PersonCard from "../personCard/PersonCard";
 import {teamMockArray} from "../../utils/mockArray";
@@ -8,6 +8,7 @@ import centerTop from "../../assets/centerTop.png";
 import centerBottom from "../../assets/centerBott.png";
 import rightImg from "../../assets/rightImg.png";
 import company from "../../assets/AvoAcademy.png";
+import {ArrowForwardIcon} from "@chakra-ui/icons";
 // colorScheme='teal'
 
 const AboutUsPage = () => {
@@ -83,6 +84,11 @@ const AboutUsPage = () => {
                     </Box>
                 </GridItem>
             </Grid>
+            <Box _hover={{bg: 'red.100'}} fontSize={25} textAlign="end" mt={5}>
+                <Link href='/contactUs'>
+                    Contact Us... <ArrowForwardIcon mx={2}/>
+                </Link>
+            </Box>
         </>
 
     );

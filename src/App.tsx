@@ -8,11 +8,12 @@ import {Login} from "./pages/login/Login";
 import ProductPage from "./pages/productPage/ProductPage";
 import {Card, CardBody} from "@chakra-ui/react";
 import AboutUsPage from "./pages/aboutUs/AboutUsPage";
+import ContactUsPage from "./pages/contactUs/ContactUsPage";
 
 
 function App() {
     return (
-        <Card size={"lg"}  >
+        <Card size={"lg"}>
             <Header/>
             <CardBody>
                 <Routes>
@@ -21,6 +22,7 @@ function App() {
                     <Route path={"/registration"} element={<Registration/>}/>
                     <Route path={"/oneProd"} element={<ProductPage/>}/>
                     <Route path={"/aboutUs"} element={<AboutUsPage/>}/>
+                    <Route path={"/contactUs"} element={<ContactUsPage/>}/>
                 </Routes>
             </CardBody>
             <Footer/>

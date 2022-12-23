@@ -35,6 +35,20 @@ export default function NavComponent() {
     const navigateToAddList = () => {
         navigate('/addList')
     }
+    const navigateToMyLists = () => {
+        navigate('/myListings')
+    }
+
+    const navigateToAccSettings = () => {
+
+    }
+
+    const navigateToHelp = () => {
+    }
+
+    const logOut = () => {
+
+    }
 
     return (
         <Box display='flex' alignItems='baseline'>
@@ -51,7 +65,8 @@ export default function NavComponent() {
                 />
                 <Input type='search' placeholder='What are we in search of today?'/>
             </InputGroup>
-            <Box onClick={navigateToAboutUs} cursor="pointer" fontSize='22px' textAlign="center" fontWeight="400"
+            <Box onClick={() => navigateToAboutUs()} cursor="pointer" fontSize='22px' textAlign="center"
+                 fontWeight="400"
                  alignSelf="center" w="40%"
                  color='#303030'>
                 About Us
@@ -83,6 +98,10 @@ export default function NavComponent() {
                         <MenuItem onClick={() => navigateToLogin()}>login</MenuItem>
                         <MenuItem onClick={() => navigateToRegistration()}>Registration</MenuItem>
                         <MenuItem onClick={() => navigateToAddList()}>Add list</MenuItem>
+                        <MenuItem onClick={() => navigateToMyLists()}>My listing's</MenuItem>
+                        <MenuItem onClick={() => navigateToAccSettings()}>Account settings</MenuItem>
+                        <MenuItem onClick={() => navigateToHelp()}>Help</MenuItem>
+                        <MenuItem onClick={() => logOut()}>Log Out</MenuItem>
                     </MenuList>
                 </Menu>
             </Box>
