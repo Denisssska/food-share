@@ -1,22 +1,31 @@
 {
   "files": {
-    "main.css": "/food-share/static/css/main.5cad0a2c.css",
-    "main.js": "/food-share/static/js/main.678a3051.js",
+    "main.css": "/food-share/static/css/main.6bc67305.css",
+    "main.js": "/food-share/static/js/main.e365dff4.js",
+    "static/media/leftImg.png": "/food-share/static/media/leftImg.041c6102eabe74adc605.png",
+    "static/media/rightImg.png": "/food-share/static/media/rightImg.e589f402221e436722de.png",
     "static/media/Rectangle 55.png": "/food-share/static/media/Rectangle 55.e29f92ed1451fb1ce234.png",
     "static/media/Rectangle 53.png": "/food-share/static/media/Rectangle 53.2675977b3314f9178100.png",
     "static/media/Rectangle 54.png": "/food-share/static/media/Rectangle 54.8d5988c9e3508e047489.png",
+    "static/media/centerBott.png": "/food-share/static/media/centerBott.3f5cbc80c6b843fa4660.png",
+    "static/media/centerTop.png": "/food-share/static/media/centerTop.df9c8950ac811d382e3e.png",
     "static/media/hello-i-m-nik-hehUfVxG8Xk-unsplash 1.png": "/food-share/static/media/hello-i-m-nik-hehUfVxG8Xk-unsplash 1.65e8ff033740235c8308.png",
     "static/media/macaroons.png": "/food-share/static/media/macaroons.03434fe4b81902b5bfe5.png",
     "static/media/pizza.png": "/food-share/static/media/pizza.e35a7d4bb28b09fa35ee.png",
     "static/media/burgers.png": "/food-share/static/media/burgers.353a54f21278dec4a042.png",
+    "static/media/Foodies Soup Kitchen.png": "/food-share/static/media/Foodies Soup Kitchen.92077e5df37ac36028b1.png",
+    "static/media/Tarlan.png": "/food-share/static/media/Tarlan.8d8046562488c286e968.png",
+    "static/media/AvoAcademy.png": "/food-share/static/media/AvoAcademy.9da3b74d2fa19de96fe2.png",
     "static/media/straw.svg": "/food-share/static/media/straw.f8d055fe19e1d6b8024161f6974bbebb.svg",
+    "static/media/den.jpg": "/food-share/static/media/den.9e61dc53d98b691790f6.jpg",
     "static/media/instagram.svg": "/food-share/static/media/instagram.6de0d33d0a2481c66f5fd6e059aa4aa6.svg",
     "static/media/things.svg": "/food-share/static/media/things.c75c49c5db9d9ba1184cefa90ec7aaf9.svg",
     "static/media/food.svg": "/food-share/static/media/food.ebfb8c67d16108f8f718becb0f99255c.svg",
+    "static/media/soup.svg": "/food-share/static/media/soup.5f66bee890d81f0cee343da209395c8b.svg",
+    "static/media/globus.svg": "/food-share/static/media/globus.2b8422d2de9e9fc223293961f4b78b39.svg",
     "static/media/business.svg": "/food-share/static/media/business.20e64885f82d2ae7464586ff78e16ff0.svg",
     "static/media/community.svg": "/food-share/static/media/community.b835bdb0b0cce18ab3214fd0a56fda86.svg",
     "static/media/likes.svg": "/food-share/static/media/likes.3c226c29d2d2a12c5e06ca86c274fdab.svg",
-    "static/media/filters.svg": "/food-share/static/media/filters.985b3269070065d8b7b026850fd47e0b.svg",
     "static/media/foodBanks.svg": "/food-share/static/media/foodBanks.731b9bd320533f1e0cd679fbdce1e87e.svg",
     "static/media/fridges.svg": "/food-share/static/media/fridges.0dfaac8a3a441bd78eb71c3aaea597d3.svg",
     "static/media/twiter.svg": "/food-share/static/media/twiter.c4611c2da46aed1c293753d8d5feec0e.svg",
@@ -24,14 +33,15 @@
     "static/media/wanted.svg": "/food-share/static/media/wanted.24af1c57760be318cee8a9ca1f64a874.svg",
     "static/media/volunteer.svg": "/food-share/static/media/volunteer.abef1bdf13685f2d1011e5cb427f5a1f.svg",
     "static/media/facebook.svg": "/food-share/static/media/facebook.332ce5127c7cd8f8dadb4dc0f8235145.svg",
-    "static/media/map.svg": "/food-share/static/media/map.7256d0a15426069afe3dd82af7691f6f.svg",
+    "static/media/map.svg": "/food-share/static/media/map.9081e9a6d0d64f1a6ad57702caee0122.svg",
+    "static/media/mapGray.svg": "/food-share/static/media/mapGray.b67b7e53a942a34aa377b0569bafcc85.svg",
     "index.html": "/food-share/index.html",
     "static/media/challenges.svg": "/food-share/static/media/challenges.22e743f75dd5b8da7e82a7115e2680cf.svg",
-    "main.5cad0a2c.css.map": "/food-share/static/css/main.5cad0a2c.css.map",
-    "main.678a3051.js.map": "/food-share/static/js/main.678a3051.js.map"
+    "main.6bc67305.css.map": "/food-share/static/css/main.6bc67305.css.map",
+    "main.e365dff4.js.map": "/food-share/static/js/main.e365dff4.js.map"
   },
   "entrypoints": [
-    "static/css/main.5cad0a2c.css",
-    "static/js/main.678a3051.js"
+    "static/css/main.6bc67305.css",
+    "static/js/main.e365dff4.js"
   ]
 }
