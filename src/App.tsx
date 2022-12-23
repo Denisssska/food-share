@@ -28,7 +28,6 @@ function App() {
             </CardBody>
             <Footer/>
         </Card>
-
     );
 }
 

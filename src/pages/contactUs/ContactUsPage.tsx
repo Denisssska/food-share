@@ -1,9 +1,31 @@
 import React from 'react';
-import {Avatar, Box, Button, FormControl, FormErrorMessage, FormLabel, Input} from "@chakra-ui/react";
+import {
+    Avatar,
+    Box,
+    Button,
+    FormControl,
+    FormErrorMessage,
+    FormLabel,
+    Input,
+    useBreakpointValue
+} from "@chakra-ui/react";
 import {useForm} from "react-hook-form";
 import {AuthPayload} from "../../api/profileAPI";
 
 const ContactUsPage = () => {
+    const variant = useBreakpointValue(
+        {
+            base: 'ghost',
+            md: 'solid',
+        },
+        {
+            // Breakpoint to use when mediaqueries cannot be used, such as in server-side rendering
+            // (Defaults to 'base')
+            fallback: 'md',
+        },
+    )
+    console.log(variant)
+    console.log(visualViewport?.width)
     const {
         register,
         handleSubmit,
@@ -64,7 +86,7 @@ const ContactUsPage = () => {
                     <FormErrorMessage>
                         {errors.phone && errors.phone.message}
                     </FormErrorMessage>
-                    <Button variant="ghost" m={"5% 0"} w="100%" alignSelf="center" type="submit" disabled={!isValid}>
+                    <Button variant={variant} m={"5% 0"} w="100%" alignSelf="center" type="submit" disabled={!isValid}>
                         Send message
                     </Button>
                 </FormControl>

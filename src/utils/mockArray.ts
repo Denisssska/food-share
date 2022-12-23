@@ -126,3 +126,16 @@ export const teamMockArray: Array<MockTeamArr> = [
             "\n"
     },
 ]
+export const property = {
+    imageUrl: 'https://bit.ly/2Z4KKcF',
+    imageAlt: 'Rear view of modern home with pool',
+    name: "@Localgiver123",
+    numbLikes: 4,
+    about: 'After going through my pantry I realized that I had extra’s that I’d like to giveaway. I currently have chicken noodle, veggie, and clam chowder available.',
+    pickUpAddress: '555 North Star Ln\n' +
+        'Los Angeles, CA 90210',
+    available: "4-6pm",
+    rating: 4,
+   distance:"7 mi away" ,
+    type:'Canned Food',reviews:"1,000",quantity:5
+}

@@ -5,49 +5,71 @@ import burger from "../../assets/burgers.png";
 import pizza from "../../assets/pizza.png";
 import macaroon from "../../assets/macaroons.png";
 import likes from "../../assets/likes.svg";
-
+import loc from "../../assets/location-blue.svg";
 import {useLocation} from "react-router-dom";
-import {Button} from "@chakra-ui/react";
+import {Box, Button, Card, CardBody, CardFooter, Flex, Heading, Image, Stack, Text} from "@chakra-ui/react";
+import {StarIcon} from "@chakra-ui/icons";
+import {property} from "../../utils/mockArray";
 
 const ProductPage = () => {
     const {photo} = useLocation().state;
 
     return (
         <div className={styles.root}>
-            <div className={styles.block}>
-                <div className={styles.img}><img src={photo} alt="soup"/></div>
-                <div className={styles.aboutProd}><div style={{fontWeight: "700", fontSize: "22px", lineHeight: "32px"}}>ProductsUserName</div>
-                    <div><img src={likes} alt="likes"/> : 5likes</div>
-                    <div
-                        style={{display: "flex", justifyContent: "space-between", fontWeight: "700", fontSize: "16px"}}>
-                        <div style={{alignSelf: "center"}}>Rating:</div>
-                        {/*<St name="half-rating"*/}
-                        {/*        defaultValue={2.5}*/}
-                        {/*        precision={0.5}/>*/}
-                    </div>
-                    <div>
-                        <div style={{fontWeight: "700", fontSize: "16px"}}>About product:</div>
-                        <div>It is food</div>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: "space-between"}}>
-                        <div style={{fontWeight: "700", fontSize: "16px"}}>Address:</div>
-                        <div>Partizanskaya street</div>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: "space-between"}}>
-                        <div style={{fontWeight: "700", fontSize: "16px"}}>Available:</div>
-                        <div> 4 - 6 pm</div>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: "space-between"}}>
-                        <div style={{fontWeight: "700", fontSize: "16px"}}>Quantity:</div>
-                        <div> 5</div>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: "space-between"}}>
-                        <div style={{fontWeight: "700", fontSize: "16px"}}>Food type:</div>
-                        <div>Canned food</div>
-                    </div>
-                    <Button sx={{marginTop: "22%"}} variant="contained" maxW={"960px"}>Request Pick Up</Button>
-                </div>
-            </div>
+            <Flex justify={"center"}>
+                <Image  m={10}
+                    src={photo}
+                    w={'40%'}
+                    borderRadius={20}
+                    alt={photo}
+                />
+                <Box alignSelf="center" w={"40%"}>
+                    <Box lineHeight={2}>
+                        <Flex>
+                            <Heading alignSelf="center" size='md'>{property.name}</Heading>
+                            <Image pl={4} src={loc} alt={loc}/>
+                            <Text px={2}>{property.distance}</Text>
+                        </Flex>
+                        <Flex>
+                            <Image src={likes} alt={likes}/>
+                            <Text px={2}>{property.numbLikes}</Text>
+                        </Flex>
+                        <Flex mt='2' alignItems='center'>
+                            {Array(5)
+                                .fill('')
+                                .map((_, i) => (
+                                    <StarIcon
+                                        key={i}
+                                        color={i < property.rating ? 'teal.500' : 'gray.300'}
+                                    />
+                                ))}
+                            <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+                                {property.reviews} reviews
+                            </Box>
+                        </Flex>
+                        <Text lineHeight={1.5}>{property.about}</Text>
+                        <Heading alignSelf="center" size='md'>Pick Up Address</Heading>
+                        <Text>{property.pickUpAddress}</Text>
+                        <Flex>
+                            <Heading alignSelf="center" size='md'>Available:</Heading>
+                            <Text px={2}>{property.available}</Text>
+                        </Flex>
+                        <Flex>
+                            <Heading alignSelf="center" size='md'>Quantity:</Heading>
+                            <Text px={2}>{property.quantity}</Text>
+                        </Flex>
+                        <Heading alignSelf="center" size='md'>Food Type</Heading>
+                        <Text >{property.type}</Text>
+                    </Box>
+
+                    <Box>
+                        <Button width={"100%"} variant='solid' colorScheme='blue'>
+                            Buy Latte
+                        </Button>
+                    </Box>
+                </Box>
+            </Flex>
+
             <div className={styles.block}>
                 <div>
                     <div style={{fontWeight: "700", fontSize: "16px"}}>Location</div>
