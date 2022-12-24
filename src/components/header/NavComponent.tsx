@@ -54,7 +54,8 @@ export default function NavComponent() {
         <Box display='flex' alignItems='baseline'>
             <Image alignSelf="center" boxSize='25px' src={straw} alt={straw}/>
             <Box pl={3} alignSelf="center">
-                <Text fontSize={"25px"} fontWeight={900} textTransform={"uppercase"} color='#FF2D55'>
+                <Text onClick={() => navigateToMain()} cursor="pointer"
+                      fontSize="25px" fontWeight={900} textTransform="uppercase" color='#FF2D55'>
                     foodShare
                 </Text>
             </Box>

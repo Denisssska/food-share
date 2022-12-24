@@ -1,32 +1,23 @@
 import React from 'react';
 import {mockArray} from "../../utils/mockArray";
 import {useNavigate} from "react-router-dom";
-import {Box, GridItem, Image, Link, SimpleGrid, useBreakpointValue, useMediaQuery} from "@chakra-ui/react";
+import {Box, GridItem, Image, Link, SimpleGrid} from "@chakra-ui/react";
 import navIcon from '../../assets/map.svg';
 import soup from '../../assets/soup.svg';
 import {ArrowForwardIcon} from "@chakra-ui/icons";
+import useMediaQuery from '../../utils/useMediaQuery';
 
 export default function Main() {
-    // const [isNoneMobileScreens] = useMediaQuery("(min-width:700px)")
-    // console.log(isNoneMobileScreens)
-    const variant = useBreakpointValue(
-        {
-            base:2,
-            md:4,
-        },
-        {
-            // Breakpoint to use when mediaqueries cannot be used, such as in server-side rendering
-            // (Defaults to 'base')
-            fallback: 'md',
-        },
-    )
-    // console.log(variant)
+    const isLargeThan700 = useMediaQuery('(min-width:700px)')
+    const isLargeThan500 = useMediaQuery('(min-width:500px)')
+
+    console.log(isLargeThan700)
     const navigate = useNavigate();
     return (<Box>
-            <SimpleGrid columns={variant} spacing={10}>
+            <SimpleGrid columns={!isLargeThan500?1: !isLargeThan700 ? 2 : 4} spacing={10}>
                 {mockArray.map((item, id) => (
                     <GridItem mt='2' mb='2' key={id}>
-                        <Image width={"100%"} style={{cursor: "pointer", borderRadius: "10px"}}
+                        <Image width="100%" cursor="pointer" borderRadius="10px"
                                onClick={() => navigate("/oneProd", {state: {photo: item.img}})} src={item.img}
                                alt="soup"/>
                         <div>

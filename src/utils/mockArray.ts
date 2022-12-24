@@ -136,6 +136,30 @@ export const property = {
         'Los Angeles, CA 90210',
     available: "4-6pm",
     rating: 4,
-   distance:"7 mi away" ,
-    type:'Canned Food',reviews:"1,000",quantity:5
+    distance: "7 mi away",
+    type: 'Canned Food', reviews: "1,000", quantity: 5
 }
+export const asideProdProperty = [
+    {
+        img: pizza,
+        name: "Forza Storico",
+        about: "2 containers of cooked Vongole pasta (19oz each)",
+        available: "9 - 11pm",
+        distance: "10mi"
+    },
+    {
+        img: pizza,
+        name: "Forza Storico",
+        about: "2 containers of cooked Vongole pasta (19oz each)",
+        available: "9 - 11pm",
+        distance: "10mi"
+    },
+    {
+        img: pizza,
+        name: "Forza Storico",
+        about: "2 containers of cooked Vongole pasta (19oz each)",
+        available: "9 - 11pm",
+        distance: "10mi"
+    },
+
+]
