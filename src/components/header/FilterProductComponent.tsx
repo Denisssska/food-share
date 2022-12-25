@@ -6,7 +6,6 @@ import {useEffect, useState} from "react";
 
 const SimpleBottomNavigation = () => {
     const [value, setValue] = useState<any>();
-    const [objName, setObjName] = useState('');
     const f1 = (name: string) => {
         const obj = navigationActionsSVG.find(item => item.name === name);
         setValue(obj)
@@ -21,7 +20,6 @@ const SimpleBottomNavigation = () => {
                     el={el}
                     key={id}
                     value={value}
-                    setObjName={setObjName}
                     f1={f1}
                 />
             })}
@@ -29,7 +27,7 @@ const SimpleBottomNavigation = () => {
     )
 }
 
-const FilterProductCompBox = ({value, setObjName, el, f1}: any) => {
+const FilterProductCompBox = ({value, el, f1}: any) => {
 
     return (
         <Box>
