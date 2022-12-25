@@ -11,7 +11,7 @@ export default function Main() {
     const isLargeThan700 = useMediaQuery('(min-width:700px)')
     const isLargeThan500 = useMediaQuery('(min-width:500px)')
 
-    console.log(isLargeThan700)
+        //console.log(isLargeThan700)
     const navigate = useNavigate();
     return (<Box>
             <SimpleGrid columns={!isLargeThan500?1: !isLargeThan700 ? 2 : 4} spacing={10}>

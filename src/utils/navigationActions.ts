@@ -1,79 +1,81 @@
-import {ReactComponent as Food} from "../assets/food.svg";
-import {ReactComponent as Things} from "../assets/things.svg";
-import {ReactComponent as Borrow} from "../assets/borrow.svg";
-import {ReactComponent as Wanted} from "../assets/wanted.svg";
-import {ReactComponent as FoodBanks} from "../assets/foodBanks.svg";
-import {ReactComponent as Fridges} from "../assets/fridges.svg";
-import {ReactComponent as Business} from "../assets/business.svg";
-import {ReactComponent as Volunteer} from "../assets/volunteer.svg";
-import {ReactComponent as Challenges} from "../assets/challenges.svg";
-import {ReactComponent as Community} from "../assets/community.svg";
-import {ReactComponent as Map} from "../assets/mapGray.svg";
 import food from "../assets/food.svg";
+import foodRed from "../assets/foodRed.svg";
 import things from "../assets/things.svg";
+import thingsRed from "../assets/thingsRed.svg";
 import borrow from "../assets/borrow.svg";
+import borrowRed from "../assets/borrowRed.svg";
 import wanted from "../assets/wanted.svg";
+import wantedRed from "../assets/wantedRed.svg";
 import foodBanks from "../assets/foodBanks.svg";
+import foodBanksRed from "../assets/foodBanksRed.svg";
 import fridges from "../assets/fridges.svg";
+import fridgesRed from "../assets/fridgesRed.svg";
 import business from "../assets/business.svg";
+import businessRed from "../assets/businessRed.svg";
 import volunteer from "../assets/volunteer.svg";
+import volunteerRed from "../assets/volunteerRed.svg";
 import challenges from "../assets/challenges.svg";
-import  community from "../assets/community.svg";
+import challengesRed from "../assets/challengesRed.svg";
+import community from "../assets/community.svg";
+import communityRed from "../assets/communityRed.svg";
 import map from "../assets/mapGray.svg";
-import React from "react";
+import mapRed from "../assets/mapRed.svg";
 
 
-export const navigationActions: { Component: React.FunctionComponent<React.SVGProps<SVGSVGElement> & { title?: string | undefined; }> }[] = [
-    {Component: Food}, {Component: Community},
-    {Component: Map}, {Component: Things},
-    {Component: Borrow}, {Component: Wanted},
-    {Component: FoodBanks}, {Component: Fridges},
-    {Component: Business}, {Component: Volunteer},
-    {Component: Challenges},
-]
-export const navigationActionsSVG =[
+export const navigationActionsSVG = [
     {
         name: 'Food',
-        src: food
+        src: food,
+        red:foodRed
     },
     {
         name: 'Things',
-        src: things
+        src: things,
+        red:thingsRed
     },
     {
         name: 'Borrow',
-        src: borrow
+        src: borrow,
+        red:borrowRed
     },
     {
         name: 'Wanted',
-        src: wanted
+        src: wanted,
+        red:wantedRed
     },
     {
         name: 'FoodBanks',
-        src: foodBanks
+        src: foodBanks,
+        red:foodBanksRed
     },
     {
         name: 'Fridges',
-        src: fridges
+        src: fridges,
+        red:fridgesRed
     },
     {
         name: 'Business',
-        src: business
+        src: business,
+        red:businessRed
     },
     {
         name: 'Volunteer',
-        src: volunteer
+        src: volunteer,
+        red:volunteerRed
     },
     {
         name: 'Challenges',
-        src: challenges
+        src: challenges,
+        red:challengesRed
     },
     {
         name: 'Community',
-        src: community
+        src: community,
+        red:communityRed
     },
     {
         name: 'Map',
-        src: map
+        src: map,
+        red:mapRed
     }
 ]

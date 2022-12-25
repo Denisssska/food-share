@@ -1,23 +1,45 @@
 import * as React from 'react';
-import {navigationActions, navigationActionsSVG} from "../../utils/navigationActions";
-import {Box, Text} from "@chakra-ui/react";
-import {Image} from "@chakra-ui/react";
-import {ReactComponent as MyLogo} from '../../assets/mapGray.svg';
+import {navigationActionsSVG} from "../../utils/navigationActions";
+import {Box, Image} from "@chakra-ui/react";
+import "../../index.scss";
+import {useEffect, useState} from "react";
 
-export default function SimpleBottomNavigation() {
-    const [value, setValue] = React.useState(0);
+const SimpleBottomNavigation = () => {
+    const [value, setValue] = useState<any>();
+    const [objName, setObjName] = useState('');
+    const f1 = (name: string) => {
+        const obj = navigationActionsSVG.find(item => item.name === name);
+        setValue(obj)
+    }
+
 
     return (
         <Box display='flex' pt={8} justifyContent="space-around" alignItems='baseline'>
-            {navigationActionsSVG.map((el, id) => {
-                return <Box
-                    key={id}><Image m="0 auto" alignItems="center" cursor="pointer" src={el.src} boxSize={6}
-                />
-                    <div >{el.name}</div>
-                </Box>
-            })}
 
-            {/*<MyLogo fill={"red"}/>*/}
+            {navigationActionsSVG.map((el, id) => {
+                return <FilterProductCompBox
+                    el={el}
+                    key={id}
+                    value={value}
+                    setObjName={setObjName}
+                    f1={f1}
+                />
+            })}
         </Box>
+    )
+}
+
+const FilterProductCompBox = ({value, setObjName, el, f1}: any) => {
+
+    return (
+        <Box>
+            <Image onClick={() => f1(el.name)} m="0 auto" alignItems="center" cursor="pointer"
+                   src={value?.name === el.name ? el.red : el.src}
+                   boxSize={6}
+            />
+            <div>{el.name}</div>
+        </Box>
+
     );
 }
+export default SimpleBottomNavigation
