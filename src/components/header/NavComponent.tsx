@@ -59,14 +59,15 @@ export default function NavComponent() {
                     foodShare
                 </Text>
             </Box>
-            <InputGroup alignSelf="center" w={"50%"} ml={"6%"} alignItems={"center"}>
+            <InputGroup   alignSelf="center" w={"50%"} ml={"6%"} alignItems={"center"}>
                 <InputLeftElement
                     pointerEvents='none'
                     children={<SearchIcon color='gray.300'/>}
                 />
-                <Input type='search' placeholder='What are we in search of today?'/>
+                <Input focusBorderColor='#FF2D55' type='search' placeholder='What are we in search of today?'/>
             </InputGroup>
             <Box onClick={() => navigateToAboutUs()} cursor="pointer" fontSize='22px' textAlign="center"
+                 _hover={{color: "#FF2D55"}}
                  fontWeight="400"
                  alignSelf="center" w="40%"
                  color='#303030'>
@@ -74,7 +75,8 @@ export default function NavComponent() {
             </Box>
             <Box alignSelf="center" p={0} color='#303030'>
                 <Menu>
-                    <MenuButton _expanded={{bg: 'blue.400'}} _hover={{bg: 'gray.400'}} variant="styled" as={Button}
+                    <MenuButton _expanded={{bg: 'gray.100', color: "#FF2D55"}}
+                                _hover={{bg: 'gray.100', color: "#FF2D55"}} variant="styled" as={Button}
                                 rightIcon={<ChevronDownIcon/>}>
                     </MenuButton>
                     <MenuList>
@@ -92,7 +94,7 @@ export default function NavComponent() {
             <Image mr="5%" alignSelf="center" src={map} alt={map}/>
             <Box alignSelf="center" p={0} color='#303030'>
                 <Menu>
-                    <MenuButton cursor="pointer" _expanded={{bg: 'blue.400'}} _hover={{bg: 'gray.400'}} variant="styled"
+                    <MenuButton cursor="pointer" _expanded={{bg: '#FF2D55'}} variant="styled"
                                 boxSize='40px' as={Avatar}>
                     </MenuButton>
                     <MenuList>
@@ -106,7 +108,6 @@ export default function NavComponent() {
                     </MenuList>
                 </Menu>
             </Box>
-
             {/*<Avatar alignSelf="center" boxSize='40px' ml="5%" src='https://bit.ly/broken-link'/>*/}
             <Box pl={5} fontSize='22px' textAlign="center" fontWeight="400" alignSelf="center">name</Box>
         </Box>

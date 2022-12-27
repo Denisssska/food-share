@@ -13,9 +13,9 @@ import ContactUsPage from "./pages/contactUs/ContactUsPage";
 
 function App() {
     return (
-        <Card size={"lg"}>
+        <Card size={"lg"} height={"100%"}>
             <Header/>
-            <CardBody>
+            <CardBody >
                 <Routes>
                     <Route path={"/"} element={<Main/>}/>
                     <Route path={"/*"} element={<Main/>}/>
